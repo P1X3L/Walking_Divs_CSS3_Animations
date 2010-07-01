@@ -1,0 +1,127 @@
+
+* { margin: 0; padding: 0; border: 0; color: inherit; list-style-type: none; }
+body { position: relative; width: 100%; height: 100%; margin: auto; font-family: Arial, Georgia, "Times New Roman", serif; font-size: 12px; background-color: #fff; }
+div.clear { clear: both; }
+.clear { clear: both; }
+.clear-block:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clear-block { display: inline-block; }
+input { cursor: pointer; }
+hr { visibility: hidden; clear: both; }
+a { text-decoration: none; }
+.hide { visibility: hidden; }
+h1 { font-size: 12px; font-weight: normal; font-variant: small-caps; } 
+h2 { font-variant: small-caps; font-weight: normal; font-size: 14px; }
+
+#main { width: 1800px; height: 1000px; background: url('images/stage.jpg') 0 -500px no-repeat }
+
+.belly { /*-webkit-border-top-right-radius: 30px; -webkit-border-top-left-radius: 20px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;*/ }
+
+.head { position: absolute; bottom: 97px; left: 13px; width:50px; height: 49px; background: url('images/head.png') 0 0 no-repeat; -webkit-border-radius: 20px; }
+#main:hover .head { -webkit-animation-name: 'headMovment'; -webkit-animation-duration: 1s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 0.5s; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+.belly { position: relative; top: 550px; width: 59px; height: 100px; background: url('images/belly.png') 0 0 no-repeat; z-index: 5; }
+#main:hover .belly { -webkit-animation-name: 'bodyTranslation'; -webkit-animation-duration: 12500ms; -webkit-animation-timing-function: linear; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.leftArm, .rightArm { position: relative; top: 7px; left: 8px; width: 26px; height: 70px; background: url('images/arm.png') 0 0 no-repeat; -webkit-transform-origin: top center; }
+
+.rightArm { z-index: 4; -webkit-transform: rotate(-25deg); -webkit-transition: 1100ms linear; }
+#main:hover .rightArm { -webkit-transform: rotate(20deg); -webkit-animation-name: 'armRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 1100ms; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.leftArm { top: -72px; z-index: 0; -webkit-transform: rotate(20deg); }
+#main:hover .leftArm { -webkit-animation-name: 'armRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.forArm { position: absolute; top: 60px; width: 22px; height: 99px; background: url('images/forArm.png') 0 0 no-repeat; -webkit-transform-origin: top center; } 
+
+.forArm.Right { z-index: 4; -webkit-transform: rotate(-30deg); -webkit-transition: 1s linear; }
+#main:hover .forArm.Right { -webkit-transform: rotate(0deg); -webkit-animation-name: 'forArmRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 1s; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.forArm.Left { z-index: 0; }
+#main:hover .forArm.Left { -webkit-animation-name: 'forArmRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.leftLeg, .rightLeg { position: relative; width: 47px; left: 3px; height: 94px; background: url('images/leg.png') 0 0 no-repeat; -webkit-transform-origin: top center; }
+
+.rightLeg { bottom: 152px; z-index: 3; }
+#main:hover .rightLeg { -webkit-animation-name: 'legRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.leftLeg { bottom: 56px; -webkit-transform: rotate(-20deg); -webkit-transition: 1s linear; }
+#main:hover .leftLeg { -webkit-transform: rotate(10deg); -webkit-animation-name: 'legRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 1s; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite;}
+
+.forLeg { position: absolute; top: 94px; left: 10px; width: 33px; height: 85px; background: url('images/forleg.png') 0 0 no-repeat; -webkit-transform-origin: top center; }
+
+
+#main:hover .forLeg.Right { -webkit-animation-name: 'forLegRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.forLeg.Left { -webkit-transform: rotate(0deg); -webkit-transition: 1s linear; }
+#main:hover .forLeg.Left { -webkit-transform: rotate(30deg); -webkit-animation-name: 'forLegRotation'; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 1s; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
+
+.shoes { position: relative; top: 80px; width: 40px; height: 15px; background: url('images/shoes.png') 0 0 no-repeat; -webkit-border-top-right-radius: 30px; -webkit-border-top-left-radius: 20px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;}
+
+
+@-webkit-keyframes 'legRotation' { 
+	from { -webkit-transform: rotate(10deg); }
+	50%  { -webkit-transform: rotate(-20deg); }
+	to   { -webkit-transform: rotate(10deg); }
+ 	}
+	
+
+@-webkit-keyframes 'forLegRotation' { 
+	from { -webkit-transform: rotate(30deg); } 
+	50%  { -webkit-transform: rotate(0deg); }
+	60%  { -webkit-transform: rotate(0deg); }
+	to   { -webkit-transform: rotate(30deg); }
+	}
+	
+@-webkit-keyframes 'armRotation' { 
+	from { -webkit-transform: rotate(20deg); } 
+	50%  { -webkit-transform: rotate(-25deg); }
+	to   { -webkit-transform: rotate(20deg); }
+	}
+
+@-webkit-keyframes 'forArmRotation' { 
+	from { -webkit-transform: rotate(0deg); } 
+	50%  { -webkit-transform: rotate(-30deg); }
+	60%  { -webkit-transform: rotate(-30deg); }
+	to   { -webkit-transform: rotate(0deg); }
+	}
+
+@-webkit-keyframes 'bodyTranslation' { 
+	from { -webkit-transform: translate(50px, 5); }
+	4%  { -webkit-transform: translate(100px, 0px); }
+	8%  { -webkit-transform: translate(150px, 5px); }
+	12%  { -webkit-transform: translate(200px, 0px); }
+	16%  { -webkit-transform: translate(250px, 5px); }
+	20%  { -webkit-transform: translate(300px, 0px); }
+	24%  { -webkit-transform: translate(350px, 5px); }
+	28%  { -webkit-transform: translate(400px, 0px); }
+	32%  { -webkit-transform: translate(450px, 5px); }
+	36%  { -webkit-transform: translate(500px, 0px); }
+	40%  { -webkit-transform: translate(550px, 5px); }
+	44%  { -webkit-transform: translate(600px, 0px); }
+	48%  { -webkit-transform: translate(650px, 5px); }
+	52%  { -webkit-transform: translate(700px, 0px); }
+	56%  { -webkit-transform: translate(750px, 5px); }
+	60%  { -webkit-transform: translate(800px, 0px); }
+	64%  { -webkit-transform: translate(850px, 5px); }
+	68%  { -webkit-transform: translate(900px, 0px); }
+	72%  { -webkit-transform: translate(950px, 5px); }
+	76%  { -webkit-transform: translate(1000px, 0px); }
+	80%  { -webkit-transform: translate(1050px, 5px); }
+	84%  { -webkit-transform: translate(1100px, 0px); }
+	88%  { -webkit-transform: translate(1150px, 5px); }
+	92%  { -webkit-transform: translate(1200px, 0px); }
+	96%  { -webkit-transform: translate(1250px, 5px); }
+	to   { -webkit-transform: translate(1300px, 0px); }
+	}
+	
+@-webkit-keyframes 'headMovment' { 
+	from { -webkit-transform: translate(0, 0); } 
+	50%  { -webkit-transform: translate(5px, 2px); }
+ 	to   { -webkit-transform: translate(0, 0); }
+ 	}	
+
+
+
+ 
+
+
+
+
