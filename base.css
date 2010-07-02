@@ -12,9 +12,14 @@ a { text-decoration: none; }
 h1 { font-size: 12px; font-weight: normal; font-variant: small-caps; } 
 h2 { font-variant: small-caps; font-weight: normal; font-size: 14px; }
 
-#main { width: 1800px; height: 1000px; background: url('images/stage.jpg') 0 -500px no-repeat }
+#main { width: 1800px; height: 1000px; background: url('images/stage.jpg') 0 -500px no-repeat; }
 
-.belly { /*-webkit-border-top-right-radius: 30px; -webkit-border-top-left-radius: 20px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;*/ }
+/*.belly { -webkit-border-top-right-radius: 30px; -webkit-border-top-left-radius: 20px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px; }
+
+.head, .belly, .leftArm, .rightArm, .forArm { border: 1px solid black; background: white; }
+
+.rightLeg, .leftLeg, .forLeg, .shoes { border: 1px solid blue; background: blue; } */ /* !!! ACTIVEZ CETTE PARTIE ET DESACTIVEZ LES BACKGROUNDS POUR VOIR LES DIVS SANS IMAGES !!! */
+
 
 .head { position: absolute; bottom: 97px; left: 13px; width:50px; height: 49px; background: url('images/head.png') 0 0 no-repeat; -webkit-border-radius: 20px; }
 #main:hover .head { -webkit-animation-name: 'headMovment'; -webkit-animation-duration: 1s; -webkit-animation-timing-function: linear; -webkit-animation-delay: 0.5s; -webkit-animation-direction: alternate; -webkit-animation-iteration-count: infinite; }
@@ -55,27 +60,29 @@ h2 { font-variant: small-caps; font-weight: normal; font-size: 14px; }
 
 .shoes { position: relative; top: 80px; width: 40px; height: 15px; background: url('images/shoes.png') 0 0 no-repeat; -webkit-border-top-right-radius: 30px; -webkit-border-top-left-radius: 20px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;}
 
-
+/*Mouvement des cuisses*/
 @-webkit-keyframes 'legRotation' { 
 	from { -webkit-transform: rotate(10deg); }
 	50%  { -webkit-transform: rotate(-20deg); }
 	to   { -webkit-transform: rotate(10deg); }
  	}
 	
-
+/*Mouvement des mollets*/
 @-webkit-keyframes 'forLegRotation' { 
 	from { -webkit-transform: rotate(30deg); } 
 	50%  { -webkit-transform: rotate(0deg); }
 	60%  { -webkit-transform: rotate(0deg); }
 	to   { -webkit-transform: rotate(30deg); }
 	}
-	
+
+/*Mouvement des bras*/	
 @-webkit-keyframes 'armRotation' { 
 	from { -webkit-transform: rotate(20deg); } 
 	50%  { -webkit-transform: rotate(-25deg); }
 	to   { -webkit-transform: rotate(20deg); }
 	}
 
+/*Mouvement des avant-bras*/
 @-webkit-keyframes 'forArmRotation' { 
 	from { -webkit-transform: rotate(0deg); } 
 	50%  { -webkit-transform: rotate(-30deg); }
@@ -83,6 +90,7 @@ h2 { font-variant: small-caps; font-weight: normal; font-size: 14px; }
 	to   { -webkit-transform: rotate(0deg); }
 	}
 
+/*Mouvement du tronc et déplacement*/
 @-webkit-keyframes 'bodyTranslation' { 
 	from { -webkit-transform: translate(50px, 5); }
 	4%  { -webkit-transform: translate(100px, 0px); }
@@ -112,6 +120,7 @@ h2 { font-variant: small-caps; font-weight: normal; font-size: 14px; }
 	to   { -webkit-transform: translate(1300px, 0px); }
 	}
 	
+/*Mouvements de la tete*/
 @-webkit-keyframes 'headMovment' { 
 	from { -webkit-transform: translate(0, 0); } 
 	50%  { -webkit-transform: translate(5px, 2px); }
